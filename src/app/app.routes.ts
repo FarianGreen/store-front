@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { Catalog } from './features/catalog/pages/catalog';
+import { Catalog } from './features/catalog/catalog';
 
 export const routes: Routes = [
-//   {
-//     path: '',
-//     loadComponent: () =>
-//       import('./home/home.component').then((m) => m.HomeComponent),
-//   },
+  {
+    path: '',
+    loadComponent: () =>
+      import('./features/home/home').then((m) => m.Home),
+  },
   {
     path: 'catalog',
     component: Catalog,
