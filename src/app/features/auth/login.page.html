@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" />
+    <mat-error *ngIf="form.get('email')?.hasError('required')">Email обязателен</mat-error>
+    <mat-error *ngIf="form.get('email')?.hasError('email')">Некорректный email</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Пароль</mat-label>
+    <input matInput formControlName="password" type="password" />
+    <mat-error *ngIf="form.get('password')?.hasError('required')">Пароль обязателен</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Войти</button>
+</form>
