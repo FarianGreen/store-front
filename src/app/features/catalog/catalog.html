@@ -1,7 +1,9 @@
-<div class="product-list">
-  <app-product-card
-    title="Ноутбук Lenovo"
-    [price]="59990"
-    imageUrl="https://via.placeholder.com/300x200"
-  />
+<div class="catalog-list">
+  <ng-container *ngFor="let product of products()">
+    <app-product-card
+      [title]="product.title"
+      [price]="product.price"
+      [imageUrl]="product.imageUrl"
+    />
+  </ng-container>
 </div>
