@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../features/auth/auth';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
-  logout() {
-    console.log('Пользователь вышел');
-    // TODO: добавить очистку токенов/навигацию и т.д.
+  private auth = inject(AuthService);
+  logout(): void {
+    this.auth.logout();
   }
 }

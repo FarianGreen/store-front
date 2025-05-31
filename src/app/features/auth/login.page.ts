@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from './auth';
 
 @Component({
   selector: 'app-login',
@@ -20,16 +21,15 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class LoginPage {
   private fb = inject(FormBuilder);
-
+  private auth = inject(AuthService);
   protected form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
   });
-  
-    protected onSubmit(): void {
+
+  protected onSubmit(): void {
     if (this.form.valid) {
-      console.log('✅ Login:', this.form.value);
-      // Тут будет фейковый API
+      this.auth.login();
     } else {
       this.form.markAllAsTouched();
     }
