@@ -14,4 +14,6 @@ export class Catalog {
   private catalogServise = inject(CatalogService);
 
   protected products = this.catalogServise.products;
+
+
 }

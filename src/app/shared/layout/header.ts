@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../../features/auth/auth';
+import { AuthService } from '../../pages/auth/services';
 
 @Component({
   selector: 'app-header',

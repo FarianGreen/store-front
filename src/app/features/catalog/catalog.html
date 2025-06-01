@@ -1,9 +1,5 @@
 <div class="catalog-list">
   <ng-container *ngFor="let product of products()">
-    <app-product-card
-      [title]="product.title"
-      [price]="product.price"
-      [imageUrl]="product.imageUrl"
-    />
+    <app-product-card [product]="product" />
   </ng-container>
 </div>
