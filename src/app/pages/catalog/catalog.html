@@ -1,5 +1,7 @@
 <div class="catalog-list">
-  <ng-container *ngFor="let product of products()">
+  @for(product of products(); track product.id){
+  <ng-container>
     <app-product-card [product]="product" />
   </ng-container>
+  }
 </div>

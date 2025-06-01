@@ -1,0 +1,14 @@
+<h2>Корзина</h2>
+
+@if (items().length) {
+  @for (item of items(); track item.id) {
+    <div class="cart-item">
+      {{ item.name }} — {{ item.price }}₽ × {{ item.quantity }}
+    </div>
+  }
+
+  <hr />
+  <strong class="cart-total">Итого: {{ total() }}₽</strong>
+} @else {
+  <p>Корзина пуста</p>
+}

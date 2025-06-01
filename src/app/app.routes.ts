@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Catalog } from './features/catalog/catalog';
+import { Catalog } from './pages/catalog/catalog';
 import { LoginPage } from './pages/auth/login.page';
 
 export const routes: Routes = [
@@ -14,6 +14,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginPage },
   {
     path: 'cart',
-    loadComponent: () => import('./features/cart/cart').then((m) => m.Cart),
+    loadComponent: () => import('./pages/cart/cart').then((m) => m.Cart),
   },
 ];

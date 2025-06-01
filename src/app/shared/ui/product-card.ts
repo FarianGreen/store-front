@@ -2,8 +2,8 @@ import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { CartService } from '../../features/cart/services';
-import { Product } from '../../features/catalog/interfaces/catalog-product.interfaces';
+import { CartService } from '../../pages/cart/services';
+import { Product } from '../../pages/catalog/interfaces/catalog-product.interfaces';
 
 @Component({
   selector: 'app-product-card',
