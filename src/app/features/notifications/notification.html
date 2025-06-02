@@ -1,0 +1,7 @@
+@for ( n of notifications(); track n.id){
+<div class="notification" >
+  <div class="notification-item {{ n.type }}">
+    {{ n.message }}
+  </div>
+</div>
+}

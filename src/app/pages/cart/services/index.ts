@@ -1,5 +1,6 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { CartItem } from '../interfaces/cart-item.interface';
+import { NotificationService } from '../../../features/notifications/services';
 
 
 @Injectable({
@@ -7,6 +8,7 @@ import { CartItem } from '../interfaces/cart-item.interface';
 })
 export class CartService {
   private readonly _items = signal<CartItem[]>([]);
+  private notify = inject(NotificationService);
 
   readonly items = this._items.asReadonly();
   readonly total = computed(() =>
@@ -21,6 +23,7 @@ export class CartService {
     } else {
       this._items.update(items => [...items, item]);
     }
+    this.notify.show(`${item.name} добавлен в корзину`, 'success');
   }
 
   remove(id: number) {
