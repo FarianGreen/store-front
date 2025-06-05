@@ -2,8 +2,9 @@ import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { CartService } from '../../pages/cart/services';
-import { Product } from '../../pages/catalog/interfaces/catalog-product.interfaces';
+import { Product } from '../../pages/catalog-page/interfaces/catalog-product.interfaces';
+import { CartService } from '../../pages/cart-page/services';
+
 
 @Component({
   selector: 'app-product-card',
@@ -12,7 +13,7 @@ import { Product } from '../../pages/catalog/interfaces/catalog-product.interfac
   styleUrl: './product-card.scss',
 })
 export class ProductCard {
-@Input() product!: Product;
+  @Input() product!: Product;
 
   private cart = inject(CartService);
 

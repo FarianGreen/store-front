@@ -5,8 +5,8 @@ import { CartService } from './services';
 @Component({
   selector: 'app-cart',
   imports: [CommonModule],
-  templateUrl: './cart.html',
-  styleUrl: './cart.scss'
+  templateUrl: './cart-page.componet.html',
+  styleUrl: './cart-page.componet.scss'
 })
 export class Cart {
   private cart = inject(CartService);

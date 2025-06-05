@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-catalog',
   standalone: true,
   imports: [ProductCard, CommonModule],
-  templateUrl: './catalog.html',
-  styleUrl: './catalog.scss',
+  templateUrl: './catalog-page.component.html',
+  styleUrl: './catalog-page.component.scss',
 })
 export class Catalog {
   private catalogServise = inject(CatalogService);
